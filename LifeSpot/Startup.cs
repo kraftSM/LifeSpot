@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Net;
 using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +36,18 @@ namespace LifeSpot
                     var html = await File.ReadAllTextAsync(viewPath);
                     await context.Response.WriteAsync(html);
                 });
+                endpoints.MapGet("/about", async context =>
+                {
+                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "about.html");
+                    var html = await File.ReadAllTextAsync(viewPath);
+                    await context.Response.WriteAsync(html);
+                });
+                endpoints.MapGet("/test", async context =>
+                {
+                    var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "test.html");
+                    var html = await File.ReadAllTextAsync(viewPath);
+                    await context.Response.WriteAsync(html);
+                });
                 endpoints.MapGet("/Static/CSS/index.css", async context =>
                 {
                     var cssPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "CSS", "index.css");
@@ -42,6 +55,7 @@ namespace LifeSpot
                     await context.Response.WriteAsync(css);
                 });
             });
+
         }
     }
 }
