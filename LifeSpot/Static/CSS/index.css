@@ -30,7 +30,8 @@ footer {
     position: absolute;
     /*bottom: 0;*/
     font-size: medium;
-    color: dimgrey; /**/
+    /*color: dimgrey; */
+    
     line-height: 66%; /* высота строки - межстрочное расстяние*/
     padding-left: 1%;
 }
