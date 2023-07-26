@@ -61,7 +61,7 @@ namespace LifeSpot
 
                     await context.Response.WriteAsync(html.ToString());
                 });           
-                endpoints.MapGet("/testing", async context =>
+                 endpoints.MapGet("/testing", async context =>
                 {
                     var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "testing.html");
 
